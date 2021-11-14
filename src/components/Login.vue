@@ -1,7 +1,7 @@
 <template lang="pug">
 .login-body 
-  p.title Login
-  p.subtitle Fill the fields to login.
+  p.title {{ $t('LOGIN.title') }}
+  p.subtitle {{ $t('LOGIN.subtitle') }}
   .login-fields
     .form
       input#email.form__input(
@@ -10,7 +10,7 @@
         placeholder=" ",
         v-model="email"
       )
-      label.form__label(for="email") Email
+      label.form__label(for="email") {{ $t('LOGIN.email') }}
     .form
       input#password.form__input(
         type="password",
@@ -18,10 +18,10 @@
         placeholder=" ",
         v-model="password"
       )
-      label.form__label(for="password") Password
+      label.form__label(for="password") {{ $t('LOGIN.password') }}
     .login-features
       label.con-container-checkbox
-        span Remember me
+        span {{ $t('LOGIN.remember') }}
         input#sexo1(
           type="checkbox",
           name="name",
@@ -29,13 +29,10 @@
           formcontrolname="sexo"
         )
         span.checkmark
-    button.login-button(
-      type="submit",
-      :disabled="email === '' || password === ''"
-    ) Login
+    button.login-button(type="submit", :disabled="isFilled") Login
     .social-medias
       hr
-      span or continue with
+      span {{ $t('LOGIN.continue') }}
       hr
     .social-media-boxes
       button 
@@ -44,9 +41,9 @@
         v-icon.teste(name="bi-twitter", scale="2")
       button 
         v-icon(name="bi-google", scale="2")
-    p.create-account Don't have an account?&nbsp;
-      span(@click="changeScreen()") Sign up
-    p.forget-password Forgot password?
+    p.create-account {{ $t('LOGIN.create_account') }}&nbsp;
+      span(@click="changeScreen()") {{ $t('LOGIN.sign_up') }}
+    p.forget-password {{ $t('LOGIN.forget') }}
 </template>
 
 <script lang="ts">
@@ -63,6 +60,14 @@ export default Vue.extend({
   },
   components: {
     "v-icon": OhVueIcon,
+  },
+  computed: {
+    isFilled() {
+      if (this.email === "" || this.password === "") {
+        return true;
+      }
+      return false;
+    },
   },
   methods: {
     changeScreen() {

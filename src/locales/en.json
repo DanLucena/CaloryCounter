@@ -1,0 +1,26 @@
+{
+  "LOGIN": {
+    "title": "Login",
+    "subtitle": "Fill the fields to login.",
+    "email": "Email",
+    "password": "Password",
+    "remember": "Remember me",
+    "continue": "or continue with",
+    "create_account": "Don't have an account?",
+    "sign_up": "Sign up",
+    "forget":"Forgot password?"
+  },
+  "SIGN_UP":{
+    "title": "Sign Up",
+    "subtitle": "Fill the fields to sign up.",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "repeat_password": "Repeat password",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "sign_in": "Sign in",
+    "already": "Already have an account?"
+  }
+}

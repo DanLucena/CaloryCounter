@@ -5,6 +5,7 @@ import store from './store'
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { CoFacebookF, BiTwitter, BiGoogle } from 'oh-vue-icons/icons'
+import i18n from './i18n'
 
 Vue.config.productionTip = false
 
@@ -15,5 +16,6 @@ Vue.component("v-icon", OhVueIcon);
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

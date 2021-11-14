@@ -1,0 +1,26 @@
+{
+  "LOGIN": {
+    "title": "Login",
+    "subtitle": "Preencha os campos para fazer login.",
+    "email": "Email",
+    "password": "Senha",
+    "remember": "Lembrar-se de mim",
+    "continue": "continuar com",
+    "create_account": "Ainda não possui uma conta?",
+    "sign_up": "Cadastre-se",
+    "forget":"Esqueceu sua senha?"
+  },
+  "SIGN_UP":{
+    "title": "Cadastro",
+    "subtitle": "Preencha os campos para se cadastrar.",
+    "username": "Usuário",
+    "email": "Email",
+    "password": "Senha",
+    "repeat_password": "Repetir senha",
+    "day": "Dia",
+    "month": "Mês",
+    "year": "Ano",
+    "sign_in": "Cadastrar",
+    "already": "Já possui uma conta?"
+  }
+}

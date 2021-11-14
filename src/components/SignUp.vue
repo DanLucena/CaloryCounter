@@ -1,7 +1,7 @@
 <template lang="pug">
 .login-body 
-  p.title Sign Up
-  p.subtitle Fill the fields to sign up.
+  p.title {{ $t('SIGN_UP.title') }}
+  p.subtitle {{ $t('SIGN_UP.subtitle') }}
   .login-fields
     .form
       input#name.form__input(
@@ -10,7 +10,7 @@
         placeholder=" ",
         v-model="nome"
       )
-      label.form__label(for="name") Username
+      label.form__label(for="name") {{ $t('SIGN_UP.username') }}
     .form
       input#email.form__input(
         type="email",
@@ -18,7 +18,7 @@
         placeholder=" ",
         v-model="email"
       )
-      label.form__label(for="email") Email
+      label.form__label(for="email") {{ $t('SIGN_UP.email') }}
     .form
       input#password.form__input(
         type="password",
@@ -26,7 +26,7 @@
         placeholder=" ",
         v-model="password"
       )
-      label.form__label(for="password") Password
+      label.form__label(for="password") {{ $t('SIGN_UP.password') }}
     .form
       input#repeat-password.form__input(
         type="password",
@@ -34,23 +34,20 @@
         placeholder=" ",
         v-model="repeatPassword"
       )
-      label.form__label(for="repeat-password") Repeat password
+      label.form__label(for="repeat-password") {{ $t('SIGN_UP.repeat_password') }}
     .form-birthday
       select(name="day")
-        option(value="") Day
+        option(value="") {{ $t('SIGN_UP.day') }}
         option(value="1") 1
       select(name="mouth")
-        option(value="") Mouth
+        option(value="") {{ $t('SIGN_UP.month') }}
         option(value="1") January
       select(name="year")
-        option(value="") Year
+        option(value="") {{ $t('SIGN_UP.year') }}
         option(value="1") 1999
-    button.login-button(
-      type="submit",
-      :disabled="nome === '' || password === '' || email === '' || repeatPassword === ''"
-    ) Sign in
-    p.create-account Don't have an account?&nbsp;
-      span(@click="changeScreen()") Sign in
+    button.login-button(type="submit", :disabled="isFilled") {{ $t('SIGN_UP.title') }}
+    p.create-account {{ $t('SIGN_UP.already') }}&nbsp;
+      span(@click="changeScreen()") {{ $t('SIGN_UP.sign_in') }}
 </template>
 
 <script lang="ts">
@@ -65,6 +62,19 @@ export default Vue.extend({
       password: "",
       repeatPassword: "",
     };
+  },
+  computed: {
+    isFilled() {
+      if (
+        this.nome === "" ||
+        this.password === "" ||
+        this.email === "" ||
+        this.repeatPassword === ""
+      ) {
+        return true;
+      }
+      return false;
+    },
   },
   methods: {
     changeScreen() {
