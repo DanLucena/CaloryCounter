@@ -3,10 +3,10 @@
   Login(v-if="typeForm", @changeLogin="changeComponent($event)")
   SignUp(v-if="!typeForm", @changeLogin="changeComponent($event)")
   .footer-box 
-    p By clicking the button above, you agree to&nbsp;
-      span our terms of use&nbsp;
-      | and&nbsp;
-      span privacy polites
+    p {{ $t('HOME.terms') }}&nbsp;
+      span {{ $t('HOME.use') }}&nbsp;
+      | {{ $t('HOME.and') }}&nbsp;
+      span {{ $t('HOME.privacy') }}
 </template>
 
 <script lang="ts">

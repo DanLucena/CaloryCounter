@@ -1,4 +1,22 @@
 {
+  "HOME":{
+    "first_title": "Faça login para",
+    "second_title": "Administrar sua dieta",
+    "first_subtitle": "Aqui você terá controle total sobre sua dieta e exercícios",
+    "second_subtitle": "sendo capaz de monitorar sua perda de peso.",
+    "terms": "Ao clicar você esta aceitando os",
+    "use": "nossos termos de uso",
+    "and": "e",
+    "privacy": "políticas de privacidade"
+  },
+  "HEADER":{
+    "first_name": "Calory",
+    "second_name": "Counter",
+    "languages": {
+      "english": "English",
+      "portugues": "Português"
+    }
+  },
   "LOGIN": {
     "title": "Login",
     "subtitle": "Preencha os campos para fazer login.",
@@ -20,7 +38,7 @@
     "day": "Dia",
     "month": "Mês",
     "year": "Ano",
-    "sign_in": "Cadastrar",
+    "sign_in": "Logar",
     "already": "Já possui uma conta?"
   }
 }

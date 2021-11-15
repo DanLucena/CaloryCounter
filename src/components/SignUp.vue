@@ -35,7 +35,7 @@
         v-model="repeatPassword"
       )
       label.form__label(for="repeat-password") {{ $t('SIGN_UP.repeat_password') }}
-    .form-birthday
+    .select-boxes
       select(name="day")
         option(value="") {{ $t('SIGN_UP.day') }}
         option(value="1") 1
@@ -65,12 +65,7 @@ export default Vue.extend({
   },
   computed: {
     isFilled() {
-      if (
-        this.nome === "" ||
-        this.password === "" ||
-        this.email === "" ||
-        this.repeatPassword === ""
-      ) {
+      if (!this.nome || !this.password || !this.email || !this.repeatPassword) {
         return true;
       }
       return false;
@@ -85,6 +80,10 @@ export default Vue.extend({
 </script>
 
 <style lang="less" scoped>
+@import "../less/form-input";
+@import "../less/login-button";
+@import "../less/select-box";
+
 .login-fields {
   display: flex;
   flex-direction: column;
@@ -106,30 +105,6 @@ export default Vue.extend({
     margin-bottom: 2rem;
   }
 
-  .login-button {
-    width: 100%;
-    border: none;
-    height: 3.1rem;
-    border-radius: 0.4rem;
-    background-color: #f90;
-    color: #fff;
-    font-size: 1rem;
-    transition: all 0.3s;
-    -webkit-box-shadow: 0px 3px 5px 3px rgba(255, 153, 0, 0.17);
-    -moz-box-shadow: 0px 3px 5px 3px rgba(255, 153, 0, 0.17);
-    box-shadow: 0px 3px 5px 3px rgba(255, 153, 0, 0.17);
-
-    &:hover {
-      background-color: #f1b415;
-    }
-
-    &:disabled {
-      cursor: auto;
-      background-color: #6b6e70;
-      box-shadow: none;
-    }
-  }
-
   .create-account {
     margin: 2.5rem auto 0 auto;
 
@@ -140,62 +115,14 @@ export default Vue.extend({
     }
   }
 }
-.form {
-  position: relative;
+
+.select-boxes {
   width: 100%;
-  height: 3rem;
-  margin-bottom: 1rem;
-
-  &__input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #e1e5ee;
-    border-radius: 0.5rem;
-    font-size: inherit;
-    color: #000;
-    outline: none;
-    padding: 1.25rem;
-    background: none;
-
-    &:focus {
-      border-color: #f90;
-    }
-  }
-
-  &__label {
-    position: absolute;
-    left: 1rem;
-    top: 0.8rem;
-    padding: 0 0.5rem;
-    color: #000;
-    cursor: text;
-    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
-    background-color: #fff;
-  }
-}
-
-.form__input:focus ~ .form__label,
-.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
-  top: -0.5rem;
-  font-size: 0.8rem;
-  left: 0.8rem;
-}
-
-.form-birthday {
-  width: 100%;
-  display: flex;
   justify-content: space-evenly;
   margin-bottom: 1rem;
 
   select {
-    border: 2px solid #e1e5ee;
-    height: 3rem;
-    border-radius: 0.5rem;
     width: 32%;
-    text-align: center;
   }
 }
 </style>

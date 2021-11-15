@@ -1,6 +1,14 @@
 <template lang="pug">
 .home
-  LoginBox
+  Header
+  .login-container
+    .texts
+      h1 {{ $t('HOME.first_title') }}
+      h1#title {{ $t('HOME.second_title') }}
+      p {{ $t('HOME.first_subtitle') }}
+      p {{ $t('HOME.second_subtitle') }}
+      img(src="../assets/figures/teste.svg", alt="alt")
+    LoginBox
   .custom-shape-divider-bottom-1635908466
     svg(
       data-name="Layer 1",
@@ -24,10 +32,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import LoginBox from "@/components/LoginBox.vue";
+import Header from "@/components/Header.vue";
 
 @Component({
   components: {
     LoginBox,
+    Header,
   },
 })
 export default class Home extends Vue {}
@@ -38,8 +48,48 @@ export default class Home extends Vue {}
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+
+  .login-container {
+    margin: auto 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8rem;
+
+    .texts {
+      width: 50%;
+      min-width: 26.813rem;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 3rem;
+        word-spacing: 0.3rem;
+      }
+      #title {
+        margin-bottom: 1rem;
+      }
+      p {
+        color: #999;
+      }
+      img {
+        width: 42rem;
+        margin-left: auto;
+        margin-top: 4rem;
+      }
+      @media (max-width: 1030px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1370px) {
+      padding: 1.7rem 5rem 0 5rem;
+    }
+    @media (max-width: 1030px) {
+      padding: 0;
+      margin: auto;
+    }
+  }
 }
 .custom-shape-divider-bottom-1635908466 {
   position: absolute;

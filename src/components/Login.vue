@@ -29,7 +29,7 @@
           formcontrolname="sexo"
         )
         span.checkmark
-    button.login-button(type="submit", :disabled="isFilled") Login
+    button.login-button(type="submit", :disabled="isFilled") {{ $t('LOGIN.title') }}
     .social-medias
       hr
       span {{ $t('LOGIN.continue') }}
@@ -63,7 +63,7 @@ export default Vue.extend({
   },
   computed: {
     isFilled() {
-      if (this.email === "" || this.password === "") {
+      if (!this.email || !this.password) {
         return true;
       }
       return false;
@@ -78,6 +78,10 @@ export default Vue.extend({
 </script>
 
 <style lang="less" scoped>
+@import "../less/checkbox";
+@import "../less/form-input";
+@import "../less/login-button";
+
 .login-body {
   width: 100%;
   padding: 2rem;
@@ -151,122 +155,6 @@ export default Vue.extend({
       font-weight: 600;
       color: #f90;
       cursor: pointer;
-    }
-  }
-
-  .login-button {
-    border: none;
-    height: 3.1rem;
-    border-radius: 0.4rem;
-    background-color: #f90;
-    color: #fff;
-    font-size: 1rem;
-    transition: all 0.3s;
-    -webkit-box-shadow: 0px 3px 5px 3px rgba(255, 153, 0, 0.17);
-    -moz-box-shadow: 0px 3px 5px 3px rgba(255, 153, 0, 0.17);
-    box-shadow: 0px 3px 5px 3px rgba(255, 153, 0, 0.17);
-
-    &:hover {
-      background-color: #f1b415;
-    }
-
-    &:disabled {
-      cursor: auto;
-      background-color: #6b6e70;
-      box-shadow: none;
-    }
-  }
-}
-.form {
-  position: relative;
-  width: 100%;
-  height: 3rem;
-  margin-bottom: 1rem;
-
-  &__input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #e1e5ee;
-    border-radius: 0.5rem;
-    font-size: inherit;
-    color: #000;
-    outline: none;
-    padding: 1.25rem;
-    background: none;
-
-    &:focus {
-      border-color: #f90;
-    }
-  }
-
-  &__label {
-    position: absolute;
-    left: 1rem;
-    top: 0.8rem;
-    padding: 0 0.5rem;
-    color: #000;
-    cursor: text;
-    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
-    background-color: #fff;
-  }
-}
-
-.form__input:focus ~ .form__label,
-.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
-  top: -0.5rem;
-  font-size: 0.8rem;
-  left: 0.8rem;
-}
-
-.con-container-checkbox {
-  width: fit-content;
-  display: flex;
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  font-size: 16px;
-  color: #555770;
-  align-items: center;
-  margin-bottom: 1.5rem;
-
-  input {
-    display: none;
-
-    &:checked ~ .checkmark {
-      background-color: #f90;
-
-      &:after {
-        display: block;
-      }
-    }
-  }
-
-  .checkmark {
-    box-shadow: inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #ecf1f4;
-
-    border-radius: 4px;
-
-    &:after {
-      content: "";
-      position: absolute;
-      display: none;
-      left: 6px;
-      top: 1px;
-      width: 6px;
-      height: 11px;
-      border: solid white;
-      border-width: 0 3px 3px 0;
-      transform: rotate(45deg);
-      border-radius: 2px;
     }
   }
 }

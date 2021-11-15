@@ -1,4 +1,22 @@
 {
+  "HOME":{
+    "first_title": "Sign In to",
+    "second_title": "Manage your Diet",
+    "first_subtitle": "Here you will have full control over your diet and exercise",
+    "second_subtitle": "being able to monitor your weight loss.",
+    "terms": "By clicking the button above, you agree to",
+    "use": "our terms of use",
+    "and": "and",
+    "privacy": "privacy polites"
+  },
+  "HEADER":{
+    "first_name": "Calory",
+    "second_name": "Counter",
+    "languages": {
+      "english": "English",
+      "portugues": "Português"
+    }
+  },
   "LOGIN": {
     "title": "Login",
     "subtitle": "Fill the fields to login.",
