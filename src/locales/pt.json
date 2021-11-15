@@ -26,7 +26,8 @@
     "continue": "continuar com",
     "create_account": "Ainda não possui uma conta?",
     "sign_up": "Cadastre-se",
-    "forget":"Esqueceu sua senha?"
+    "forget":"Esqueceu sua senha?",
+    "error": "Email ou senha incorretos !"
   },
   "SIGN_UP":{
     "title": "Cadastro",
@@ -40,5 +41,8 @@
     "year": "Ano",
     "sign_in": "Logar",
     "already": "Já possui uma conta?"
+  },
+  "DASHBOARD": {
+    "teste": "pastel"
   }
 }

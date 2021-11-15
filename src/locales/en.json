@@ -26,7 +26,8 @@
     "continue": "or continue with",
     "create_account": "Don't have an account?",
     "sign_up": "Sign up",
-    "forget":"Forgot password?"
+    "forget":"Forgot password?",
+    "error": "Incorrect email or password !"
   },
   "SIGN_UP":{
     "title": "Sign Up",
@@ -40,5 +41,8 @@
     "year": "Year",
     "sign_in": "Sign in",
     "already": "Already have an account?"
+  },
+  "DASHBOARD": {
+    "teste": "teste"
   }
 }

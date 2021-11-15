@@ -29,7 +29,7 @@
           formcontrolname="sexo"
         )
         span.checkmark
-    button.login-button(type="submit", :disabled="isFilled") {{ $t('LOGIN.title') }}
+    button.login-button(type="submit", :disabled="isFilled", @click="login()") {{ $t('LOGIN.title') }}
     .social-medias
       hr
       span {{ $t('LOGIN.continue') }}
@@ -72,6 +72,14 @@ export default Vue.extend({
   methods: {
     changeScreen() {
       this.$emit("changeLogin", false);
+    },
+    login() {
+      if (this.email === "email@email.com" && this.password === "senha") {
+        localStorage.setItem("token", "as80f8asdf8asdf879asdfj12n");
+        this.$router.push("/dashboard");
+      } else {
+        this.$toast.error(this.$t("LOGIN.error"));
+      }
     },
   },
 });

@@ -7,6 +7,11 @@ import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { CoFacebookF, BiTwitter, BiGoogle } from 'oh-vue-icons/icons'
 import i18n from './i18n'
 
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
+Vue.use(Toast);
+
 Vue.config.productionTip = false
 
 addIcons(CoFacebookF, BiTwitter, BiGoogle);

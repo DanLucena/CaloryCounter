@@ -5,14 +5,31 @@
     p {{ $t('HEADER.first_name') }}
       span {{ $t('HEADER.second_name') }}
   .select-boxes
-    select(name="day", v-model="$i18n.locale")
+    select(name="day", v-model="language")
       option(value="en") 💵 {{ $t('HEADER.languages.english') }}
       option(value="pt") ⚽ {{ $t('HEADER.languages.portugues') }}
 </template>
 
 <script>
 import { Vue } from "vue-property-decorator";
-export default Vue.extend({});
+
+export default Vue.extend({
+  data: () => {
+    return {};
+  },
+  computed: {
+    language: {
+      get() {
+        return this.$store.state.language;
+      },
+      set(value) {
+        this.$store.commit("setLanguage", value);
+        this.$i18n.locale = value;
+      },
+    },
+  },
+  methods: {},
+});
 </script>
 
 <style lang="less" scoped>

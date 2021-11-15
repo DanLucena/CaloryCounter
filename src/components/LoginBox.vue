@@ -11,8 +11,6 @@
 
 <script lang="ts">
 import { Vue } from "vue-property-decorator";
-import Login from "./Login.vue";
-import SignUp from "./SignUp.vue";
 
 export default Vue.extend({
   name: "LoginBox",
@@ -22,8 +20,10 @@ export default Vue.extend({
     };
   },
   components: {
-    Login,
-    SignUp,
+    Login: () =>
+      import(/*webpackChunkName: "Login"*/ "../components/Login.vue"),
+    SignUp: () =>
+      import(/*webpackChunkName: "SignUp"*/ "../components/SignUp.vue"),
   },
   methods: {
     changeComponent(res: boolean) {
