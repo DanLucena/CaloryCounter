@@ -1,11 +1,16 @@
 <template lang="pug">
-h1 {{ $t('DASHBOARD.teste') }}
+.page-container
+  SideBar
 </template>
 
 <script>
 import { Vue } from "vue-property-decorator";
 
-export default Vue.extend({});
+export default Vue.extend({
+  components: {
+    SideBar: () => import("../components/SidebarMenu.vue"),
+  },
+});
 </script>
 
 <style lang="less" scoped>
