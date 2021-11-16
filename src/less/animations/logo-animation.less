@@ -1,0 +1,32 @@
+.animation-logo {
+  animation-duration: .8s;
+  animation-name: slidein;
+}
+
+.animation-image {
+  animation-duration: 5s;
+  animation-name: opacity;
+  animation: opacity 2s ease-in-out;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

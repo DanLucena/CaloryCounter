@@ -3,11 +3,12 @@
   Header
   .login-container
     .texts
-      h1 {{ $t('HOME.first_title') }}
-      h1#title {{ $t('HOME.second_title') }}
-      p {{ $t('HOME.first_subtitle') }}
-      p {{ $t('HOME.second_subtitle') }}
-      img(src="../assets/figures/teste.svg", alt="alt")
+      .animation-logo
+        h1 {{ $t('HOME.first_title') }}
+        h1#title {{ $t('HOME.second_title') }}
+        p {{ $t('HOME.first_subtitle') }}
+        p {{ $t('HOME.second_subtitle') }}
+      img.animation-image(src="../assets/figures/teste.svg", alt="alt")
     LoginBox
   .custom-shape-divider-bottom-1635908466
     svg(
@@ -44,6 +45,7 @@ export default class Home extends Vue {}
 </script>
 
 <style lang="less" scoped>
+@import "../less/animations/logo-animation.less";
 .home {
   width: 100%;
   height: 100vh;

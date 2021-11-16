@@ -1,7 +1,8 @@
 <template lang="pug">
 .login-box
-  Login(v-if="typeForm", @changeLogin="changeComponent($event)")
-  SignUp(v-if="!typeForm", @changeLogin="changeComponent($event)")
+  transition(name="fade")
+    Login(v-if="typeForm", @changeLogin="changeComponent($event)")
+    SignUp(v-if="!typeForm", @changeLogin="changeComponent($event)")
   .footer-box 
     p {{ $t('HOME.terms') }}&nbsp;
       span {{ $t('HOME.use') }}&nbsp;
@@ -34,6 +35,7 @@ export default Vue.extend({
 </script>
 
 <style lang="less" scoped>
+@import "../less/animations/animation-login.less";
 .login-box {
   width: 28.8rem;
   height: 43rem;
